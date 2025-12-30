@@ -1,0 +1,9 @@
+*Cách 1 
+- Bước 1: Vào google nhập từ khóa "kaggle"  
+- Bước 2: Vào phần dataset phía bên tay trái và nhập vào thanh tìm kiếm từ khóa "Student Dropout Dataset" của Subhajeet Das · 3y ago · 6,245 views
+- Bước 3: Nhấn váo phần có mũi tên dowload để tải về
+*Cách 2
+Truy cập vào đường dẫn "https://www.kaggle.com/code/subhajeetdas/student-dropout-prediction/input"
+
+
+  
