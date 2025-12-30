@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dự đoán bỏ học</title>
+    <style>
+      body {
+        font-family: Arial;
+        max-width: 900px;
+        margin: 30px auto;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      input,
+      select,
+      button {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      button {
+        background: #135bec;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+      }
+      .card {
+        border: 1px solid #ddd;
+        padding: 16px;
+        border-radius: 10px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      td,
+      th {
+        border-bottom: 1px solid #eee;
+        padding: 6px;
+      }
+      label {
+        font-size: 13px;
+        color: #333;
+        display: block;
+        margin-bottom: 6px;
+      }
+      .hint {
+        font-size: 12px;
+        color: #666;
+        margin-top: 6px;
+      }
+      .slider-wrap {
+        margin-top: 4px;
+      }
+      input[type="range"] {
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Demo dự đoán tình trạng học sinh</h2>
+
+    <div class="card">
+      <form method="POST">
+        <div class="grid">
+          {% for col in columns %}
+          <div>
+            <label>{{ col }}</label>
+
+            {% if ranges and col in ranges %}
+            <div class="slider-wrap">
+              <input
+                type="range"
+                name="{{ col }}"
+                min="{{ ranges[col]['min'] }}"
+                max="{{ ranges[col]['max'] }}"
+                step="{{ ranges[col]['step'] }}"
+                value="{{ (ranges[col]['min'] + ranges[col]['max'])/2 }}"
+                oninput="document.getElementById('v_{{ loop.index }}').innerText=this.value"
+              />
+              <div class="hint">
+                Giá trị:
+                <b id="v_{{ loop.index }}"
+                  >{{ (ranges[col]['min'] + ranges[col]['max'])/2 }}</b
+                >
+              </div>
+            </div>
+
+            {# ===== Dropdown cho category ===== #} {% elif options and col in
+            options %}
+            <select name="{{ col }}">
+              <option value="">-- Chọn --</option>
+
+              {% if options[col] is mapping %} {% for code, label in
+              options[col].items() %}
+              <option value="{{ code }}">{{ label }}</option>
+              {% endfor %} {% else %} {# options[col] là list #} {% for opt in
+              options[col] %}
+              <option value="{{ opt }}">{{ opt }}</option>
+              {% endfor %} {% endif %}
+            </select>
+
+            {% else %}
+            <input name="{{ col }}" placeholder="{{ col }}" />
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+
+        <br />
+        <button type="submit">Dự đoán</button>
+      </form>
+    </div>
+
+    {% if result %}
+    <div class="card">
+      <h3 style="margin: 0 0 10px 0">Kết quả dự đoán</h3>
+
+      <div
+        style="
+          padding: 12px;
+          border-radius: 10px;
+          border: 1px solid #eee;
+          background: #f8fafc;
+        "
+      >
+        <div style="font-size: 14px; color: #555">Dự đoán:</div>
+        <div style="font-size: 22px; font-weight: 700; margin-top: 4px">
+          {{ result }}
+        </div>
+      </div>
+
+      {% if probs %}
+      <div style="margin-top: 14px">
+        <div style="font-weight: 700; margin-bottom: 8px">
+          Xác suất theo từng lớp
+        </div>
+
+        {% for cname, p in probs %}
+        <div style="margin: 10px 0">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              font-size: 14px;
+            "
+          >
+            <span>{{ cname }}</span>
+            <span><b>{{ (p*100) | round(2) }}%</b></span>
+          </div>
+          <div
+            style="
+              height: 10px;
+              border-radius: 999px;
+              background: #e5e7eb;
+              overflow: hidden;
+            "
+          >
+            <div
+              style="height:10px; width: {{ p*100 }}%; background:#135bec;"
+            ></div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+  </body>
+</html>
