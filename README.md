@@ -32,6 +32,7 @@ Nguồn dữ liệu: Kaggle (tham khảo tại đây)
 ```text
 https://www.kaggle.com/code/subhajeetdas/student-dropout-predictionimage
 
+---
 
 ## Thuộc tính dữ liệu
 o	 Marital status: Tình trạng hôn nhân của sinh viên
@@ -73,10 +74,10 @@ o	Target:
   - Dropout: Bỏ học
   - Enrolled: Đang theo học
   - Graduate: Đã tốt nghiệp
-
+---
 ## Pipeline
 Dataset → EDA → Clean → Encode → Normalize → Train → Evaluate → Inference
-
+---
 ### Các bước chính
 Xử lý missing values
 Xử lý giá trị không đồng nhất
@@ -84,14 +85,14 @@ StandardScaler
 OneHotEncoder
 GridSearchCV để tối ưu tham số
 Train & Evaluate
-
+---
 ## Mô hình
 - Logistic Regression
 - Support Vector Machine
 - Decision Tree
 - Random Forest
 - Gradient Boosting
-
+---
 ## Kết quả
 - Đối với bài toán phân loại đa lớp
 | Model               | Accuracy | Precision | Recall | F1-score |
@@ -110,7 +111,7 @@ Train & Evaluate
 | Decision Tree       | 0.558    | 0.41      | 0.88   | 0.56     |
 | Random Forest       | 0.693    | 0.52      | 0.74   | 0.61     |
 | Gradient boosting   | 0.714    | 0.55      | 0.59   | 0.57     |
-
+---
 ## Cách chạy
 - Bước 1: Mở môi trường thực hành code. Gợi ý nên sử dụng Google Colab
 - Bước 2: Nhập lệnh !git clone https://github.com/NguyenDoKhaiHoan/machinelearning.git để tài các mục trong git hub
