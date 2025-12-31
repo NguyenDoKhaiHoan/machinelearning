@@ -139,11 +139,12 @@ Gộp **Graduate** và **Enrolled** thành lớp `0`, và **Dropout** thành l�
 
 ## Cách chạy
 
-### Cách 1: Chạy trên Google Colab (khuyến nghị)
+### Cách 1: Chạy trên Google Colab 
 **Bước 1:** Mở Google Colab  
 **Bước 2:** Clone source về Colab:
 ```bash
 !git clone https://github.com/NguyenDoKhaiHoan/machinelearning.git
+```
 **Bước 3:** Nhấn đúp lần lượt các mục như app để tải notbook về sau đó có thể import và chạy lần lượt các cell code
   + Với data có thể làm theo hướng dẫn để tải dữ liệu về
   + Đối với VScode nếu chưa có các thư viện cần thiết thì nên lần lượt dùng lệnh "pip install thư viên" để cài đặt
