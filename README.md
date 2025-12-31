@@ -149,6 +149,6 @@ Gộp **Graduate** và **Enrolled** thành lớp `0`, và **Dropout** thành l�
   + Với data có thể làm theo hướng dẫn để tải dữ liệu về
   + Đối với VScode nếu chưa có các thư viện cần thiết thì nên lần lượt dùng lệnh "pip install thư viên" để cài đặt
   + Đối với Google Colab hay các môi trường có sẵn ở trên mạng thì chỉ cần chạy lần lượt các cell code để có kết quả giống như trong notebook
-  + Với mục demo khuyến nghị chạy code đến cell chứa phần import joblib để tải các file các cột đặc trưng chính và best_model rồi dùng VScode gõ lệnh python app.py để chạy ra demo
+  + Với mục demo khuyến nghị chạy code đến cell chứa phần import joblib để tải các file các cột đặc trưng chính và best_model rồi dùng VScode gõ lệnh python app.py để chạy được giao diện demo phát hiện sinh viên có nguy cơ bỏ học
     
 
