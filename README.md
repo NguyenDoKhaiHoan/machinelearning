@@ -16,7 +16,6 @@ Bài toán được mô hình hóa dưới dạng **phân loại đa lớp** v�
 Ngoài ra, bài toán cũng được chuyển đổi sang **phân loại nhị phân** để tập trung vào mục tiêu phát hiện nguy cơ bỏ học:
 - Lớp `0`: Graduate + Enrolled  
 - Lớp `1`: Dropout  
-
 ---
 
 ## Mục tiêu xây dựng hệ thống dự đoán
@@ -31,7 +30,7 @@ Xây dựng hệ thống Machine Learning dự đoán trạng thái của sinh v
 Nguồn dữ liệu: Kaggle
 ```text
 https://www.kaggle.com/code/subhajeetdas/student-dropout-predictionimage
-
+```
 
 ---
 
