@@ -29,7 +29,7 @@ Xây dựng hệ thống Machine Learning dự đoán trạng thái của sinh v
 ## Dataset
 Nguồn dữ liệu: Kaggle
 ```text
-https://www.kaggle.com/code/subhajeetdas/student-dropout-predictionimage
+https://www.kaggle.com/code/subhajeetdas/student-dropout-prediction
 ```
 
 ---
