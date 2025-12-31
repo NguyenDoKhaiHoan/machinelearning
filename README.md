@@ -1,22 +1,37 @@
-#Phát hiện sinh viên có khả năng bỏ học bằng các thuật toán Machine Learning
+# Phát hiện sinh viên có khả năng bỏ học bằng các thuật toán Machine Learning
 
-#Bài toán
-- Bài toán phát hiện sinh viên có khả năng bỏ học nhằm góp phần giảm thiểu tình trạng bỏ học và trượt đại học, bằng cách sử dụng các kỹ thuật học máy để xác định sinh viên có nguy cơ ngay từ giai đoạn đầu trên con đường học vấn, từ đó có thể đưa ra các chiến lược hỗ trợ phù hợp. Bộ dữ liệu bao gồm thông tin được biết đến tại thời điểm sinh viên nhập học – con đường học vấn, nhân khẩu học và các yếu tố kinh tế xã hội. Bài toán được xây dựng dưới dạng một bài toán phân loại ba loại (bỏ học, đã nhập học và tốt nghiệp) vào cuối thời lượng khóa học thông thường,bao gồm:
+## Bài toán
+Bài toán phát hiện sinh viên có khả năng bỏ học nhằm góp phần giảm thiểu tình trạng bỏ học và trượt đại học. Mục tiêu là sử dụng các kỹ thuật học máy để xác định sớm sinh viên có nguy cơ ngay từ giai đoạn đầu (tại thời điểm nhập học), từ đó nhà trường có thể đưa ra các chiến lược hỗ trợ phù hợp.
 
-- Bài toán được mô hình hóa dưới dạng phân loại đa lớp với ba nhãn mục tiêu:
-Dropout (bỏ học)
-Enrolled (đang theo học)
-Graduate (tốt nghiệp)
+Bộ dữ liệu bao gồm thông tin được biết đến tại thời điểm sinh viên nhập học:
+- Con đường học vấn
+- Nhân khẩu học
+- Các yếu tố kinh tế xã hội
 
-#Mục tiêu
-Xây dựng hệ thống Machine Learning dự đoán
-- Dropout: Bỏ học
-- Enrolled: đang theo học
-- Graduate: tốt nghiệp
+Bài toán được mô hình hóa dưới dạng **phân loại đa lớp** với ba nhãn mục tiêu:
+- **Dropout**: Bỏ học  
+- **Enrolled**: Đang theo học  
+- **Graduate**: Tốt nghiệp  
 
-#Dataset
-Nguồn: Kaggle
-https://www.kaggle.com/code/subhajeetdas/student-dropout-prediction<img width="1473" height="105" alt="image" src="https://github.com/user-attachments/assets/5a3e900d-1628-46ac-ba41-6bcec2ca3d28" />
+Ngoài ra, bài toán cũng được chuyển đổi sang **phân loại nhị phân** để tập trung vào mục tiêu phát hiện nguy cơ bỏ học:
+- Lớp `0`: Graduate + Enrolled  
+- Lớp `1`: Dropout  
+
+---
+
+## Mục tiêu xây dựng hệ thống dự đoán
+Xây dựng hệ thống Machine Learning dự đoán trạng thái của sinh viên:
+- **Dropout**: Bỏ học  
+- **Enrolled**: Đang theo học  
+- **Graduate**: Đã tốt nghiệp  
+
+---
+
+## Dataset
+Nguồn dữ liệu: Kaggle (tham khảo tại đây)
+```text
+https://www.kaggle.com/code/subhajeetdas/student-dropout-predictionimage
+
 
 #Thuộc tính dữ liệu
 o	 Marital status: Tình trạng hôn nhân của sinh viên
